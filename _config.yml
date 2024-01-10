@@ -1,5 +1,5 @@
 # Site
-name: "AI Chat with ChatGPT"
+name: "AIType: Grammar Check Keyboard"
 title: "AI Chatbot with ChatGPT: Your Intelligent Chat Partner powered by OpenAI's ChatGPT"
 description: "Welcome to AI Chat with ChatGPT, where the future of digital communication unfolds. Our platform, powered by the groundbreaking ChatGPT technology, offers a seamless and intelligent chatting experience. Dive into the realm of advanced AI with our user-friendly ChatGPT client app. Whether you're seeking smart conversation, instant information, or just a bit of fun, ChatMaster AI is your go-to chat companion. Our blog provides insights into the latest AI trends, tips for enhancing your chat experience, and updates on our constantly evolving app features. Join us on this exciting journey and transform the way you communicate!"
 logo: 'assets/images/logo.png'
@@ -9,7 +9,7 @@ disqus: 'demowebsite'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: [ "_pages" ]
 permalink: /:title/
-appstore_link: 'https://apps.apple.com/us/app/ai-ask-chat-with-ai-bots/id6472484891'
+appstore_link: 'https://apps.apple.com/us/app/aitype-grammar-check-keyboard/id6469163944'
 
 # Authors
 authors:
@@ -143,7 +143,7 @@ ampdir: amp
 github: https://github.com/sandoche/Mobile-app-landingpage-template
 
 app:
-  name: ChatGPT AI Chat
+  name: "AIType: Grammar Check Keyboard"
   description: 'Experience AI Brilliance – ChatGPT, Now on iPhone.'
   full_description: '<h5>The #1 ChatGPT AI Chat App for your iPhone</h5>
   Key features:
@@ -154,7 +154,7 @@ app:
   <br>
   Embark on a journey of seamless and smarter conversations. Download ChatGPT AI Chat today and Ask AI anything!'
   #android: https://telegra.ph/Replace-this-link-07-23
-  iOS: https://apps.apple.com/us/app/ai-ask-chat-with-ai-bots/id6472484891?platform=iphone
+  iOS: https://apps.apple.com/us/app/aitype-grammar-check-keyboard/id6469163944?platform=iphone
   #web: https://telegra.ph/Replace-this-link-07-23
   screenshots:
     - 1.png
