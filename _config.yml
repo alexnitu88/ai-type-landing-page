@@ -1,0 +1,206 @@
+# Site
+name: "AI Chat with ChatGPT"
+title: "AI Chatbot with ChatGPT: Your Intelligent Chat Partner powered by OpenAI's ChatGPT"
+description: "Welcome to AI Chat with ChatGPT, where the future of digital communication unfolds. Our platform, powered by the groundbreaking ChatGPT technology, offers a seamless and intelligent chatting experience. Dive into the realm of advanced AI with our user-friendly ChatGPT client app. Whether you're seeking smart conversation, instant information, or just a bit of fun, ChatMaster AI is your go-to chat companion. Our blog provides insights into the latest AI trends, tips for enhancing your chat experience, and updates on our constantly evolving app features. Join us on this exciting journey and transform the way you communicate!"
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/logo.png'
+baseurl: /
+disqus: 'demowebsite'
+mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+include: [ "_pages" ]
+permalink: /:title/
+appstore_link: 'https://apps.apple.com/us/app/ai-ask-chat-with-ai-bots/id6472484891'
+
+# Authors
+authors:
+  paul:
+    name: paul
+    display_name: Paul
+    avatar: 'assets/images/avatars/paul.jpg'
+    gravatar: e56154546cf4be74e393c62d1ae9f9d4
+    #    email: sageaitech@gmail.com
+    #    web: https://www.wowthemes.net
+    #    twitter: https://twitter.com/wowthemesnet
+    description: "Paul, a software developer with a keen interest in AI, enjoys sharing practical advice on implementing AI in everyday apps. He's approachable and often shares anecdotes from his own learning journey. In his free time, Paul likes hiking and exploring local coffee shops."
+  alex:
+    name: Alex N.
+    display_name: Alex
+    avatar: 'assets/images/avatars/alex.jpg'
+    gravatar: b1cc14991db7a456fcd761680bbc8f81
+    #    email: sageaitech@gmail.com
+    #    web: https://www.wowthemes.net
+    #    twitter: https://twitter.com/wowthemesnet
+    description: "Alex, with a background in computer engineering, focuses on user-friendly AI solutions. He writes about making technology more accessible and enjoys demystifying complex concepts."
+  zoe:
+    name: Zoe Anderson
+    display_name: Zoe
+    avatar: 'assets/images/avatars/zoe.jpg'
+    #    gravatar: b1cc14991db7a456fcd761680bbc8f81
+    #    email: sageaitech@gmail.com
+    #    web: https://www.wowthemes.net
+    #    twitter: https://twitter.com/wowthemesnet
+    description: "Zoe combines her expertise in AI with a strong focus on ethics. Her writing often tackles the moral implications of AI advancements. She's also a dedicated urban gardener, drawing connections between nurturing plants and cultivating responsible AI."
+  amelia:
+    name: Amelia Johnson
+    display_name: Amelia
+    avatar: 'assets/images/avatars/amelia.jpg'
+    #    gravatar: b1cc14991db7a456fcd761680bbc8f81
+    #    email: sageaitech@gmail.com
+    #    web: https://www.wowthemes.net
+    #    twitter: https://twitter.com/wowthemesnet
+    description: "Amelia has a talent for turning complex AI concepts into compelling stories. Her posts often feature real-world applications of AI, making technology relatable. She’s also a documentary film buff, which inspires her narrative-driven approach to writing."
+  lily:
+    name: Lily Rodriguez
+    display_name: Lily
+    avatar: 'assets/images/avatars/lily.jpg'
+    #    gravatar: b1cc14991db7a456fcd761680bbc8f81
+    #    email: sageaitech@gmail.com
+    #    web: https://www.wowthemes.net
+    #    twitter: https://twitter.com/wowthemesnet
+    description: "Specializing in AI-driven user experiences, Lily's insights help readers understand how AI can enhance daily interactions with technology. An amateur photographer, she brings a visual and intuitive perspective to her tech explanations."
+  emily:
+    name: Emily Carter
+    display_name: Emily
+    avatar: 'assets/images/avatars/emily.jpg'
+    #    gravatar: b1cc14991db7a456fcd761680bbc8f81
+    #    email: sageaitech@gmail.com
+    #    web: https://www.wowthemes.net
+    #    twitter: https://twitter.com/wowthemesnet
+    description: "Emily, with her rich experience in AI and a background in psychology, excels in understanding how AI impacts human behavior. She's known for her insightful talks on AI ethics and has contributed to several publications in the field. Emily is a keen runner, often participating in marathons."
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      page_header: true
+      landing_page_assets: false
+      section_title: true
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+
+# Pagination
+paginate: 6
+paginate_path: /blog/:num/
+
+# Other
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Adsense (change to "enabled" to activate, also your client id and ad slot. Create a new ad unit from your Adsense account to get the slot.)
+adsense: "disabled"
+adsense-data-ad-client: "ca-pub-3412143450191416"
+adsense-data-ad-slot: "1363087678"
+
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "disabled"
+
+exclude: [ changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock ]
+
+#
+# LANDING PAGE SECTION
+#
+email: sageaitech@gmail.com
+url: "https://gptaichat.app" # the base hostname & protocol for your site, e.g. http://example.com
+theme_color: '#efeeff'
+twitter_username: sandochee
+github_username: sandoche
+author: Sandoche Adittane
+twitter:
+  username: sandochee
+social:
+  name: Sandoche Adittane
+  links:
+    - https://twitter.com/sandochee
+    - https://www.facebook.com/sandoche
+    - https://www.linkedin.com/in/sandoche
+    - https://plus.google.com/+SandocheADITTANE
+    - https://github.com/sandoche
+
+languages: [ "en" ]
+ampdir: amp
+
+github: https://github.com/sandoche/Mobile-app-landingpage-template
+
+app:
+  name: ChatGPT AI Chat
+  description: 'Experience AI Brilliance – ChatGPT, Now on iPhone.'
+  full_description: '<h5>The #1 ChatGPT AI Chat App for your iPhone</h5>
+  Key features:
+  <br>- Instantaneous and Accurate Responses
+  <br>- 24/7 Availability
+  <br>- Private and Secure
+  <br>
+  <br>
+  Embark on a journey of seamless and smarter conversations. Download ChatGPT AI Chat today and Ask AI anything!'
+  #android: https://telegra.ph/Replace-this-link-07-23
+  iOS: https://apps.apple.com/us/app/ai-ask-chat-with-ai-bots/id6472484891?platform=iphone
+  #web: https://telegra.ph/Replace-this-link-07-23
+  screenshots:
+    - 1.png
+    - 2.png
+    - 3.png
+    - 4.png
+  producthunt: https://telegra.ph/Replace-this-link-07-23
+  companies:
+  #    - url: https://telegra.ph/Replace-this-link-07-23
+  #      image: androidpolice.png
+  #    - url: https://telegra.ph/Replace-this-link-07-23
+  #      image: producthunt.png
+
+  strings:
+    app:
+      screenshots: Screenshots
+      description: Description
+      featured: Featured in
+
+    footer:
+      copyright: Made with ❤️ in Europe 🇪🇺 by <a href="https://www.sandoche.com" target="_blank">Sandoche</a>
+      links:
+        - title: Github
+          url: https://github.com/sandoche/Mobile-app-landingpage-template
+          target: _blank
+        - title: Donate
+          url: https://paypal.me/kanbanote
+          target: _blank
+        - title: Privacy
+          url: /privacy
+
+
+### Google webmaster tools, Google Analytics, Doorbell and Cookie consent uncomment and put the API key
+#webmaster_verifications:
+#  google: verification_code
+#google_analytics: UA-XXXXXXXXX-X
+#doorbell:
+#  id: doorbell_id
+#  appKey: doorbell_appKey
+
+#cookie_consent: true
+
+### Build settings
+#plugins:
+#  - jekyll-feed
+#  - jekyll-sitemap
+#  - jekyll-seo-tag
+#  - octopress-minify-html
+#  - amp-jekyll

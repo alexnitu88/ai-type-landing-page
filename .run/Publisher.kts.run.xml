@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Publisher.kts" type="KotlinStandaloneScriptRunConfigurationType" nameIsGenerated="true">
+    <module name="ai-type-webpage" />
+    <option name="PROGRAM_PARAMETERS" value="-cp libs/gson.jar" />
+    <shortenClasspath name="NONE" />
+    <option name="filePath" value="$PROJECT_DIR$/publisher/Publisher.kts" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

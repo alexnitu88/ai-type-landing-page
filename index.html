@@ -1,0 +1,76 @@
+---
+layout: page
+title: App
+permalink: /
+page_header: false
+landing_page_assets: true
+section_title: false
+---
+
+<header class="app__header container">
+    <div class="app__logo-wrapper">
+        <img class="app__logo" src="{{ site.baseurl }}/assets/images/appicon.png" alt="{{ site.app.name }} Icon">
+    </div>
+    <div class="app__infos">
+        <h1 class="app__name">{{ site.app.name }}</h1>
+        <p class="app__description">{{ site.app.description }}</p>
+        <div class="app__buttons app__buttons--desktop">
+            {% if site.app.android %}
+            <a href="{{ site.app.android }}" class="app__button-play" target="_blank"><img
+                    src="{{ site.baseurl }}/assets/images/google-play-badge.png" alt="Get on Google Play"></a>
+            {% endif %}
+            {% if site.app.iOS %}
+            <a href="{{ site.app.iOS }}" class="app__button-ios" target="_blank"><img
+                    src="{{ site.baseurl }}/assets/images/ios.svg" alt="Get on Appstore"></a>
+            {% endif %}
+            {% if site.app.web %}
+            <a href="{{ site.app.web }}" class="app__button-web" target="_blank"><img
+                    src="{{ site.baseurl }}/assets/images/pwa-badge.png" alt="Go to website"></a>
+            {% endif %}
+        </div>
+    </div>
+</header>
+<div class="app__buttons app__buttons--mobile container">
+    {% if site.app.android %}
+    <a href="{{ site.app.android }}" class="app__button-play" target="_blank"><img
+            src="{{ site.baseurl }}/assets/images/google-play-badge.png" alt="Get on Google Play"></a>
+    {% endif %}
+    {% if site.app.iOS %}
+    <a href="{{ site.app.iOS }}" class="app__button-ios" target="_blank"><img
+            src="{{ site.baseurl }}/assets/images/ios.svg" alt="Get on Appstore"></a>
+    {% endif %}
+    {% if site.app.web %}
+    <a href="{{ site.app.web }}" class="app__button-web" target="_blank"><img
+            src="{{ site.baseurl }}/assets/images/pwa-badge.png" alt="Go to website"></a>
+    {% endif %}
+</div>
+<section class="app__screenshots app__section">
+    <div class="container">
+        <h2 class="app__section-title">{{ site.strings.app.screenshots }}</h2>
+    </div>
+    <div class="app__screenshots-wrapper container-desktop">
+        <div class="app__screenshots-list">
+            {% for screenshot in site.app.screenshots %}
+            <a href="{{ site.baseurl }}/assets/images/screenshots/{{ screenshot }}" class="lightbox">
+                <img src="{{ site.baseurl }}/assets/images/screenshots/{{ screenshot }}" class="app__screenshot">
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="app__fulldescription app__section container">
+    <h2 class="app__section-title">{{ site.strings.app.description }}</h2>
+    <div class="app__fulldescription-content">
+        <p>{{ site.app.full_description }}</p>
+    </div>
+</section>
+<section class="app__featured app__section container">
+    <h2 class="app__section-title">{{ site.strings.app.featured }}</h2>
+    <div class="app__featured-content">
+        {% for company in site.app.companies %}
+        <a href="{{ company.url }}" target="_blank" class="app__featured-company">
+            <img src="{{ site.baseurl }}/assets/images/companies/{{ company.image }}" class="app__featured-image">
+        </a>
+        {% endfor %}
+    </div>
+</section>
