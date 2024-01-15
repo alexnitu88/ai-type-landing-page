@@ -9,8 +9,10 @@ import java.awt.image.BufferedImage
 import java.security.MessageDigest
 
 val ARTICLE_IMAGES_PATH = "assets/images/article_images/"
-val ARTICLE_TOPICS_FILE = "publisher/article-topics.txt"
-val KEYWORDS_FILE = "publisher/keywords.txt"
+val INDEX_FILE = "publisher/lastProcessedIndex.txt"
+val INPUT_PATH = "publisher/input/"
+val KEYWORDS_FILE = "keywords.txt"
+val TOPICS_FILE = "topics.txt"
 
 val authors = setOf(
         "alex",
@@ -20,34 +22,47 @@ val authors = setOf(
         "lily",
         "amelia"
 )
-val keywords = readKeywords(KEYWORDS_FILE)
+val lastIndex = File(INDEX_FILE).readText().toIntOrNull() ?: 0
+val baseInputFolder = File(INPUT_PATH)
+val totalNumberOfInputSubfolders = baseInputFolder.listFiles().size
+val nextFolderIndex = (lastIndex % totalNumberOfInputSubfolders) + 1
+val nextDir = File("$INPUT_PATH/$nextFolderIndex")
 
-for (i in 0..4) {
-    val articleTopic = readFirstLine(ARTICLE_TOPICS_FILE)
-    if (articleTopic.isNullOrBlank()) {
-        println("No article topics found.")
-        break
-    }
+if (nextDir.exists()) {
+    val keywords = File(nextDir, KEYWORDS_FILE).readLines()
+    val articleTopicsFile = File(nextDir, TOPICS_FILE)
+    val articleTopic = articleTopicsFile.useLines { it.firstOrNull() ?: "" }
+
+    generateBlogPost(keywords, articleTopic)
+
+    File(INDEX_FILE).writeText(nextFolderIndex.toString())
+
+    deleteFirstLine(articleTopicsFile)
+} else {
+    throw IllegalStateException("Directory does not exist: $nextDir")
+}
+
+fun generateBlogPost(keywords: List<String>, articleTopic: String) {
+    require(articleTopic.isNotBlank()) { "null/empty topic" }
+    require(keywords.isNotEmpty()) { "empty keyword list" }
 
     //generate image
     val imageFile = "${articleTopic.toMD5()}.jpg"
     val imageFullPath = File(ARTICLE_IMAGES_PATH + imageFile)
-    if (!imageFullPath.exists()) {
+    if (imageFullPath.exists()) {
+        println("Image file exists: $imageFile")
+    } else {
         val dallePrompt = generateDallePrompt(articleTopic)
         val imgUrl = generateImage(dallePrompt)
-        if (imgUrl == null) break
 
         saveDalleImage(imgUrl, articleTopic.toMD5())
-    } else {
-        println("Image file exists: $imageFile")
     }
 
-    //generate article content
     var articleContent: String
     val articleKeywords = keywords.shuffled()
             .subList(0, 7)
     do {
-        articleContent = generateArticle(
+        articleContent = generateArticleContent(
                 topic = articleTopic,
                 keywords = articleKeywords.joinToString("\n")
         )
@@ -55,11 +70,9 @@ for (i in 0..4) {
     } while (articleContent.isEmpty())
 
     saveArticle(articleTopic.split(":").first(), articleContent, articleKeywords, imageFile)
-
-    deleteFirstLine(ARTICLE_TOPICS_FILE)
 }
 
-fun generateArticle(topic: String, keywords: String): String {
+fun generateArticleContent(topic: String, keywords: String): String {
     println("Generating article: $topic")
 
     val formattedKeywords = keywords
@@ -235,18 +248,25 @@ fun generateImage(dallePrompt: String): String {
         val gson = Gson()
         val response = gson.fromJson(jsonStringResponse, DalleResponse::class.java)
 
-        response.data.firstOrNull()?.url
-                ?: throw IllegalStateException("Image not generated! Api response:\n$jsonStringResponse")
+        val imgUrl = response.data.firstOrNull()?.url
+
+        require(!imgUrl.isNullOrBlank()) { "null/empty image url" }
+
+        imgUrl
     } else {
-        println("Dalle API request failed with response code: ${httpURLConnection.responseCode}")
-        ""
+        throw IllegalStateException("Dalle API request failed with response code: ${httpURLConnection.responseCode}")
     }
 }
 
 fun saveDalleImage(imageUrl: String, fileName: String) {
     val imageFullPath = ARTICLE_IMAGES_PATH + "$fileName.jpg"
+    //ensure the directory exists
+    val outputDir = File(ARTICLE_IMAGES_PATH)
+    outputDir.mkdir()
 
-    println("Saving article image under $imageFullPath.")
+    val outputFile = File(imageFullPath)
+
+    println("Saving article image under ${outputFile.absolutePath}.")
 
     try {
         // Download the PNG image from the URL
@@ -257,12 +277,12 @@ fun saveDalleImage(imageUrl: String, fileName: String) {
         outputImage.graphics.drawImage(inputImage, 0, 0, null)
 
         // Save the JPG image to disk
-        val outputFile = File(imageFullPath)
         ImageIO.write(outputImage, "jpg", outputFile)
 
         println("Image downloaded and converted to JPG format at: ${outputFile.absolutePath}")
     } catch (e: Exception) {
-        println("An error occurred: ${e.message}")
+        println("An error occurred while saving the dall-e image: ${e.message}")
+        throw e
     }
 }
 
@@ -272,18 +292,9 @@ fun String.toMD5(): String {
     return digest.joinToString("") { "%02x".format(it) }
 }
 
-fun readFirstLine(filePath: String): String {
-    return File(filePath).useLines { it.firstOrNull() ?: "" }
-}
-
-fun deleteFirstLine(filePath: String) {
-    val file = File(filePath)
+fun deleteFirstLine(file: File) {
     val lines = file.readLines().drop(1)
     file.writeText(lines.joinToString("\n"))
-}
-
-fun readKeywords(filePath: String): List<String> {
-    return File(filePath).readLines()
 }
 
 data class ChatGptResponse(

@@ -1,8 +1,8 @@
 name: Kotlin Script Workflow
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: '0 0 * * *' # Runs every day at midnight. Change as needed.
+  schedule:
+    - cron: '0 */4 * * *' # Runs every 4 hours
 
 env:
   OPEN_AI_KEY: ${{ secrets.OPEN_AI_KEY }}
@@ -22,6 +22,7 @@ jobs:
 
       - name: Run Kotlin Script
         run: |
+          pwd
           echo "Starting Kotlin script execution"
           chmod +x ./publisher/Publisher.kts
           kotlin -classpath "publisher/libs/gson.jar" ./publisher/Publisher.kts
@@ -33,6 +34,7 @@ jobs:
           git config --global user.email 'your-email@example.com'
           git add _posts/*.md
           git add assets/images/article_images/*.jpg
-          ls -l _posts
+          git add publisher/input/
+          git add publisher/lastProcessedIndex.txt
           git commit -m "Add generated article"
           git push
