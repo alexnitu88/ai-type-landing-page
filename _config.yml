@@ -127,24 +127,24 @@ exclude: [ changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock ]
 email: sageaitech@gmail.com
 url: "https://aitype.app" # the base hostname & protocol for your site, e.g. http://example.com
 theme_color: '#efeeff'
-twitter_username: sandochee
-github_username: sandoche
-author: Sandoche Adittane
-twitter:
-  username: sandochee
+#twitter_username: sandochee
+#github_username: sandoche
+author: Prodigy AI
+#twitter:
+#  username: sandochee
 social:
-  name: Sandoche Adittane
-  links:
-    - https://twitter.com/sandochee
-    - https://www.facebook.com/sandoche
-    - https://www.linkedin.com/in/sandoche
-    - https://plus.google.com/+SandocheADITTANE
-    - https://github.com/sandoche
+  name: Prodigy AI
+#  links:
+#    - https://twitter.com/sandochee
+#    - https://www.facebook.com/sandoche
+#    - https://www.linkedin.com/in/sandoche
+#    - https://plus.google.com/+SandocheADITTANE
+#    - https://github.com/sandoche
 
 languages: [ "en" ]
 ampdir: amp
 
-github: https://github.com/sandoche/Mobile-app-landingpage-template
+#github: https://github.com/sandoche/Mobile-app-landingpage-template
 
 app:
   name: "AIType: The #1 AI Keyboard for iPhone"
