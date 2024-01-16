@@ -1,7 +1,11 @@
 # Site
-name: "AIType: Grammar Check Keyboard"
+name: "AIType: The Ultimate AI Keyboard with ChatGPT for iPhone and iPad"
 title: "Revolutionize Your Typing with AI Type: The Ultimate iOS Keyboard for Flawless Writing, Smart Suggestions & Multi-Language Support - Powered by ChatGPT & GPT-4"
-description: "Welcome to AI Chat with ChatGPT, where the future of digital communication unfolds. Our platform, powered by the groundbreaking ChatGPT technology, offers a seamless and intelligent chatting experience. Dive into the realm of advanced AI with our user-friendly ChatGPT client app. Whether you're seeking smart conversation, instant information, or just a bit of fun, ChatMaster AI is your go-to chat companion. Our blog provides insights into the latest AI trends, tips for enhancing your chat experience, and updates on our constantly evolving app features. Join us on this exciting journey and transform the way you communicate!"
+description: "Discover AIType, the AI keyboard app transforming iPhone and iPad typing. It's more than a keyboard; it's a comprehensive writing assistant, ensuring every word is perfect. Whether it's a quick tweet, an important email, or a casual chat, AIType's intelligent features like spell check and grammar check integrate seamlessly with your iOS device.
+<br/><br/>
+Experience flawless writing with AIType's spellcheck iPhone feature. No more typos or grammatical errors. This AI keyboard app for iPhone elevates your writing, offering real-time suggestions and corrections. AIType goes beyond just checking spelling on iPhone; it adapts to your writing style, providing iPhone spelling correction and grammar check on iPhone effortlessly.
+<br/><br/>
+AIType isn't just about correcting words; it's about enhancing your communication. It's the AI type keyboard that understands your needs, making sure your messages on iPhone and iPad are not only correct but also impactful. Embrace the future of typing with AIType, where every keystroke is a step towards perfect writing."
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: /
@@ -143,16 +147,22 @@ ampdir: amp
 github: https://github.com/sandoche/Mobile-app-landingpage-template
 
 app:
-  name: "AIType: Grammar Check Keyboard"
-  description: 'Experience AI Brilliance – ChatGPT, Now on iPhone.'
-  full_description: '<h5>The #1 ChatGPT AI Chat App for your iPhone</h5>
+  name: "AIType: The #1 AI Keyboard for iPhone"
+  description: 'Revolutionize Writing on Your iPhone with AIType - Powered by ChatGPT'
+  full_description: '<h5>AIType - The #1 AI Keyword App for your iPhone - powered by ChatGPT</h5>
   Key features:
-  <br>- Instantaneous and Accurate Responses
-  <br>- 24/7 Availability
-  <br>- Private and Secure
+  <br>- <b>Error-Free Writing</b>: Advanced grammar and spell check.
+  <br>- <b>Creative Paraphrasing</b>: Effortlessly rephrase your sentences.
+  <br>- <b>Translate on the Go</b>: Instant multi-language translation.
+  <br>- <b>Adaptive Tone</b>: Customize the tone of your text easily.
+  <br>- <b>Smart Suggestions</b>: Context-aware word choices.
+  <br>- <b>Social Media Friendly</b>: Perfect for tweets and social posts.
+  <br>- <b>Flirting Made Easy</b>: Get charming suggestions for dating apps.
+  <br>- <b>Content Rewording</b>: Refresh existing text uniquely.
   <br>
   <br>
-  Embark on a journey of seamless and smarter conversations. Download ChatGPT AI Chat today and Ask AI anything!'
+  Download AIType and elevate your writing experience on iOS!'
+
   #android: https://telegra.ph/Replace-this-link-07-23
   iOS: https://apps.apple.com/us/app/aitype-grammar-check-keyboard/id6469163944?platform=iphone
   #web: https://telegra.ph/Replace-this-link-07-23
