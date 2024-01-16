@@ -150,8 +150,8 @@ app:
   name: "AIType: The #1 AI Keyboard for iPhone"
   description: 'Revolutionize Writing on Your iPhone with AIType - Powered by ChatGPT'
   full_description: '<h5>AIType - The #1 AI Keyword App for your iPhone - powered by ChatGPT</h5>
-  Key features:
-  <br>- <b>Error-Free Writing</b>: Advanced grammar and spell check.
+  <h5>Key features:</h5>
+  - <b>Error-Free Writing</b>: Advanced grammar and spell check.
   <br>- <b>Creative Paraphrasing</b>: Effortlessly rephrase your sentences.
   <br>- <b>Translate on the Go</b>: Instant multi-language translation.
   <br>- <b>Adaptive Tone</b>: Customize the tone of your text easily.
@@ -161,7 +161,7 @@ app:
   <br>- <b>Content Rewording</b>: Refresh existing text uniquely.
   <br>
   <br>
-  Download AIType and elevate your writing experience on iOS!'
+  <h5>Download AIType and elevate your writing experience on iOS!</h5>'
 
   #android: https://telegra.ph/Replace-this-link-07-23
   iOS: https://apps.apple.com/us/app/aitype-grammar-check-keyboard/id6469163944?platform=iphone
