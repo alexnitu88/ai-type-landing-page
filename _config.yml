@@ -125,7 +125,7 @@ exclude: [ changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock ]
 # LANDING PAGE SECTION
 #
 email: sageaitech@gmail.com
-url: "https://gptaichat.app" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://aitype.app" # the base hostname & protocol for your site, e.g. http://example.com
 theme_color: '#efeeff'
 twitter_username: sandochee
 github_username: sandoche
